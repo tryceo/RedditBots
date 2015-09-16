@@ -15,9 +15,10 @@ while True:
             url = submission.url
             id = submission.id
             title = submission.title
+            titlelowercase = title.lower()
             redditurl = submission.permalink
 
-            if id not in alreadyDone and 'GPU' in title:
+            if id not in alreadyDone and ('gpu' or 'g27' or 'racing' or 'wheel') in titlelowercase:
                 sendalert("Title : " + title + " URL : " + url + " Reddit: " + redditurl)
                 alreadyDone.append(id)
 
